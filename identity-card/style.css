@@ -368,96 +368,122 @@ body {
 .card {
   width: 520px; max-width: 100%;
   min-height: 290px;
-  border-radius: 20px;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
 /* Card filled state */
 .card.card--filled {
-  background: #1a1a1a;
-  border: 1px solid rgba(223,216,208,0.14);
+  background: linear-gradient(145deg, #181818 0%, #0a0a0a 100%);
+  border: 1px solid rgba(223,216,208,0.06);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.04),
-    0 24px 64px rgba(0,0,0,0.55),
-    0 0 80px var(--accent-glow);
+    0 0 0 1px rgba(255,255,255,0.02),
+    0 32px 80px rgba(0,0,0,0.85),
+    0 0 120px var(--accent-glow);
 }
 
 /* Card Inner Layout */
 .card-inner {
   position: relative; z-index: 2;
   height: 100%; display: flex; flex-direction: column;
-  padding: 28px 28px 24px;
+  padding: 32px 32px 28px;
+  overflow: hidden;
+}
+
+/* Watermark */
+.card-watermark {
+  position: absolute;
+  top: 50%; right: -15%;
+  transform: translateY(-50%);
+  height: 180%; width: auto;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(100%);
 }
 
 /* Glass sheen overlay */
 .card-sheen {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%, rgba(255,255,255,0.02) 100%);
+    linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 40%, rgba(255,255,255,0.01) 100%);
   pointer-events: none;
-  border-radius: 20px;
+  border-radius: 24px;
 }
 
 /* Card accent bar */
 .card-bar {
   position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.85;
+  opacity: 0.9;
+  transition: background 0.6s ease;
 }
 
 /* Card glow orb */
 .card-glow {
   position: absolute; z-index: 0;
-  width: 280px; height: 280px;
+  width: 320px; height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-  top: -80px; right: -80px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+  top: -100px; right: -100px;
   pointer-events: none;
+  transition: background 0.6s ease;
+  animation: cardPulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes cardPulseGlow {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.15); opacity: 1; }
 }
 
 /* Card top row */
 .card-top {
   display: flex; align-items: flex-start; justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  position: relative; z-index: 3;
 }
 .card-brand {
-  display: flex; align-items: center; gap: 9px;
+  display: flex; align-items: center; gap: 10px;
 }
 .card-brand-name {
-  font-size: 14px; font-weight: 600;
-  letter-spacing: 0.06em; color: var(--white);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--white);
 }
 .card-brand-sub {
-  font-size: 8px; letter-spacing: 0.16em;
-  color: rgba(223,216,208,0.35);
+  font-size: 8.5px; letter-spacing: 0.22em;
+  color: rgba(223,216,208,0.4);
   font-family: var(--font-mono);
-  display: block; margin-top: 1px;
+  display: block; margin-top: 2px;
 }
 .card-type-badge {
   font-family: var(--font-mono);
-  font-size: 9px; letter-spacing: 0.14em;
+  font-size: 9px; letter-spacing: 0.16em;
   color: var(--accent);
-  background: rgba(0,0,0,0.3);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 4px 10px; border-radius: 20px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(223,216,208,0.1);
+  padding: 5px 12px; border-radius: 24px;
+  backdrop-filter: blur(8px);
+  transition: color 0.6s ease, border-color 0.6s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Card body */
 .card-body {
-  display: flex; align-items: center; gap: 22px;
-  flex: 1;
+  display: flex; align-items: center; gap: 28px;
+  flex: 1; position: relative; z-index: 3;
 }
 .card-avatar-wrap {
   flex-shrink: 0;
-  width: 80px; height: 80px;
+  width: 88px; height: 88px;
   border-radius: 50%;
   border: 2px solid var(--accent);
-  box-shadow: 0 0 20px var(--accent-glow), 0 0 0 4px rgba(0,0,0,0.4);
+  box-shadow: 0 0 24px var(--accent-glow), 0 0 0 6px rgba(0,0,0,0.3);
   overflow: hidden; position: relative;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.03);
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
 }
 .card-avatar-img {
   width: 100%; height: 100%; object-fit: cover;
@@ -465,56 +491,62 @@ body {
 .card-avatar-initials {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 26px; font-weight: 600;
+  font-size: 28px; font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.02em;
+  transition: color 0.6s ease;
 }
 .card-info { flex: 1; }
 .card-name {
-  font-size: 22px; font-weight: 600;
-  color: var(--white); letter-spacing: -0.01em;
-  line-height: 1.15; margin-bottom: 6px;
+  font-size: 26px; font-weight: 500;
+  color: var(--white); letter-spacing: -0.02em;
+  line-height: 1.1; margin-bottom: 8px;
 }
 .card-role {
-  font-size: 12px; font-weight: 500;
-  color: var(--accent); letter-spacing: 0.12em;
-  text-transform: uppercase; margin-bottom: 14px;
+  font-size: 11px; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.18em;
+  text-transform: uppercase; margin-bottom: 18px;
   font-family: var(--font-mono);
+  transition: color 0.6s ease;
 }
 .card-divider {
   height: 1px; background: rgba(223,216,208,0.08);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .card-meta {
-  display: flex; flex-direction: column; gap: 5px;
+  display: flex; flex-direction: column; gap: 6px;
 }
 .card-meta-row {
-  display: flex; gap: 8px; align-items: center;
+  display: flex; gap: 12px; align-items: center;
 }
 .card-meta-label {
-  font-size: 9px; letter-spacing: 0.14em;
+  font-size: 9px; letter-spacing: 0.2em;
   color: rgba(223,216,208,0.3); font-family: var(--font-mono);
-  width: 36px; flex-shrink: 0;
+  width: 40px; flex-shrink: 0;
 }
 .card-meta-value {
-  font-size: 10px; color: rgba(223,216,208,0.6);
-  font-family: var(--font-mono); letter-spacing: 0.04em;
+  font-size: 10.5px; color: rgba(223,216,208,0.7);
+  font-family: var(--font-mono); letter-spacing: 0.06em;
+  font-weight: 500;
 }
 
 /* Card footer */
 .card-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-top: 20px; padding-top: 16px;
-  border-top: 1px solid rgba(223,216,208,0.07);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid rgba(223,216,208,0.08);
+  position: relative; z-index: 3;
 }
 .card-id {
   font-family: var(--font-mono);
-  font-size: 10px; color: rgba(223,216,208,0.35);
-  letter-spacing: 0.08em;
+  font-size: 10px; color: rgba(223,216,208,0.4);
+  letter-spacing: 0.12em;
 }
 .card-qr {
-  width: 36px; height: 36px; opacity: 0.45;
+  width: 40px; height: 40px; opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
+.card-qr:hover { opacity: 0.8; }
 
 /* ── Action Bar ─────────────────────────── */
 .action-bar {

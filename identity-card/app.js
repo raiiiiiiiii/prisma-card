@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // --- Utility ---
-  function generateId() {
-    const chars = '0123456789ABCDEF';
-    const segment = (len) => Array.from({length: len}, () => chars[Math.floor(Math.random() * chars.length)]).join('');
-    return `${segment(4)}-${segment(4)}-${segment(4)}`;
+  function generateId(roleCode) {
+    const hex = '0123456789ABCDEF';
+    const segment = (len) => Array.from({length: len}, () => hex[Math.floor(Math.random() * hex.length)]).join('');
+    const ts = Date.now().toString(16).toUpperCase().slice(-5);
+    const rc = roleCode ? roleCode.substring(0, 3).toUpperCase() : 'SYS';
+    return `PRX-${rc}-${ts}-${segment(4)}`;
   }
 
   function getInitials(name) {
@@ -149,13 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cardHTML = `
       <div class="card-inner">
+        <img src="/identity-card/logo.svg" class="card-watermark" alt="" />
         <div class="card-sheen"></div>
         <div class="card-bar"></div>
         <div class="card-glow"></div>
         
         <div class="card-top">
           <div class="card-brand" style="display: flex; align-items: center; gap: 8px;">
-            <img src="logo.svg" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
+            <img src="/identity-card/logo.svg" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
             <div>
               <span class="card-brand-name">PrismaX</span>
               <span class="card-brand-sub">OPERATOR CREDENTIAL</span>
@@ -173,14 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="card-role">${state.role ? state.role + ' Operator' : 'Role Pending'}</div>
             <div class="card-divider"></div>
             <div class="card-meta">
-              <div class="card-meta-row"><span class="card-meta-label">UID</span><span class="card-meta-value">PX-${state.id.split('-')[0]}-${shortRoleCode}</span></div>
-              <div class="card-meta-row"><span class="card-meta-label">ISS</span><span class="card-meta-value">${date}</span></div>
+              <div class="card-meta-row"><span class="card-meta-label">SYS·ID</span><span class="card-meta-value">${state.id}</span></div>
+              <div class="card-meta-row"><span class="card-meta-label">ISSUED</span><span class="card-meta-value">${date}</span></div>
             </div>
           </div>
         </div>
 
         <div class="card-footer">
-          <span class="card-id">CARD·ID: ${state.id}</span>
+          <span class="card-id">UID // ${state.id.split('-').join('')}</span>
           <div class="card-qr">
              <svg width="36" height="36" viewBox="0 0 28 28" fill="none" opacity="0.5">
                 <rect x="2" y="2" width="10" height="10" rx="1.5" stroke="#DFD8D0" stroke-width="1.2" fill="none"/>
@@ -230,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   regenerateBtn.addEventListener('click', () => {
-    state.id = generateId();
+    state.id = generateId(state.role);
     updateLivePreview();
     showToast('New Card ID generated.');
   });
