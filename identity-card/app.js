@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const regenerateBtn = document.getElementById('regenerateBtn');
   const downloadBtn = document.getElementById('downloadBtn');
-  const shareBtn = document.getElementById('shareBtn');
 
   // State
   let state = {
@@ -239,7 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       regenerateBtn.disabled = false;
       downloadBtn.disabled = false;
-      shareBtn.disabled = false;
       
       showToast('Identity card successfully authenticated.');
     }, 800);

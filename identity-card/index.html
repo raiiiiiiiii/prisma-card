@@ -182,10 +182,6 @@
               </svg>
               Download PNG
             </button>
-                <line x1="4.4" y1="7.8" x2="9.6" y2="10.2" stroke="currentColor" stroke-width="1.2"/>
-              </svg>
-              Share to X
-            </button>
           </div>
         </section>
 
@@ -210,15 +206,7 @@
   <script src="/identity-card/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const shareBtn = document.getElementById('shareBtn');
       const regenerateBtn = document.getElementById('regenerateBtn');
-      
-      if(shareBtn) {
-        shareBtn.addEventListener('click', () => {
-          const text = encodeURIComponent("I just generated my official PrismaX Operator Identity Credential. 🦾 Build the future.\n\n@anya_yfa7 #PrismaX");
-          window.open(`https://x.com/intent/tweet?text=${text}`, '_blank');
-        });
-      }
       
       if(regenerateBtn) {
         regenerateBtn.addEventListener('click', () => {
