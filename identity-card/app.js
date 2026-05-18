@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <div class="card-top">
           <div class="card-brand" style="display: flex; align-items: center; gap: 8px;">
-            <img src="logo.png" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
+            <img src="logo.svg" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
             <div>
               <span class="card-brand-name">PrismaX</span>
               <span class="card-brand-sub">OPERATOR CREDENTIAL</span>
