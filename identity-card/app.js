@@ -218,8 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate generation
     generateBtn.style.pointerEvents = 'none';
     generateBtn.innerHTML = 'Encoding...';
+    prismaCard.classList.add('card--encoding');
     
     setTimeout(() => {
+      prismaCard.classList.remove('card--encoding');
       generateBtn.innerHTML = 'Identity Generated';
       generateBtn.style.background = '#5EE08A';
       generateBtn.style.color = '#111';
