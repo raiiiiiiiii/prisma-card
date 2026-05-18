@@ -149,18 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const shortRoleCode = state.role ? state.role.substring(0, 3).toUpperCase() : 'UNK';
     const date = new Date().toISOString().split('T')[0].replace(/-/g, '.');
 
-    const logoDataUri = "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23DFD8D0%22%2F%3E%3Ctext%20x%3D%2245%22%20y%3D%22140%22%20font-family%3D%22Georgia%2C%20'Times%20New%20Roman'%2C%20serif%22%20font-size%3D%22110%22%20fill%3D%22%23202020%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%2290%22%20font-family%3D%22Georgia%2C%20'Times%20New%20Roman'%2C%20serif%22%20font-size%3D%2250%22%20fill%3D%22%23202020%22%3E(x)%3C%2Ftext%3E%3C%2Fsvg%3E";
-
     const cardHTML = `
       <div class="card-inner">
-        <img src="${logoDataUri}" class="card-watermark" alt="" />
+        <img src="/identity-card/logo.png" class="card-watermark" alt="" />
         <div class="card-sheen"></div>
         <div class="card-bar"></div>
         <div class="card-glow"></div>
         
         <div class="card-top">
           <div class="card-brand" style="display: flex; align-items: center; gap: 8px;">
-            <img src="${logoDataUri}" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
+            <img src="/identity-card/logo.png" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
             <div>
               <span class="card-brand-name">PrismaX</span>
               <span class="card-brand-sub">OPERATOR CREDENTIAL</span>
