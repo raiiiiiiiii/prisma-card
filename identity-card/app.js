@@ -146,7 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateLivePreview() {
     if (!state.imageSrc && !state.name && !state.role) return;
 
-    const shortRoleCode = state.role ? state.role.substring(0, 3).toUpperCase() : 'UNK';
+    const rolePrefixes = {
+      'Reactive': 'RX',
+      'Assistive': 'AS',
+      'Proactive': 'PR',
+      'Exploratory': 'EX',
+      'Stabilized': 'ST',
+      'Navigational': 'NV',
+      'Groundbreaker': 'GB'
+    };
+    const shortRoleCode = state.role && rolePrefixes[state.role] ? rolePrefixes[state.role] : 'PRX';
+    const uniqueHash = Math.random().toString(36).substring(2, 6).toUpperCase();
+    const generatedId = `${shortRoleCode}-${uniqueHash}`;
     const date = new Date().toISOString().split('T')[0].replace(/-/g, '.');
 
     const cardHTML = `
@@ -160,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-brand" style="display: flex; align-items: center; gap: 8px;">
             <img src="/identity-card/logo.png" alt="PrismaX Logo" style="height: 28px; width: auto; object-fit: contain; display: block;" />
             <div>
-              <span class="card-brand-name">PrismaX</span>
-              <span class="card-brand-sub">OPERATOR CREDENTIAL</span>
+              <span class="card-meta-label">AUTH ID</span>
+              <span class="card-meta-value">${generatedId}</span>
             </div>
           </div>
           <span class="card-type-badge">${state.role ? state.role.toUpperCase() : 'UNASSIGNED'}</span>

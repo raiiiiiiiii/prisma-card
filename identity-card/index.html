@@ -166,26 +166,22 @@
 
           <!-- Action buttons -->
           <div class="action-bar" id="actionBar">
-            <button class="btn btn--ghost" id="regenerateBtn" type="button" disabled>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 7a6 6 0 1 0 6-6 6 6 0 0 0-4.5 2.04" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-                <path d="M1 3v2.5h2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <button class="btn btn--outline" id="regenerateBtn" disabled type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 2v6h-6"></path>
+                <path d="M3 12a9 9 0 1 0 2.13-5.87L9 8"></path>
               </svg>
               Regenerate
             </button>
-            <button class="btn btn--ghost" id="downloadBtn" type="button" disabled>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 11h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            
+            <button class="btn btn--outline" id="downloadBtn" disabled type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
               Download PNG
             </button>
-            <button class="btn btn--ghost" id="shareBtn" type="button" disabled>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <circle cx="11" cy="3" r="1.5" stroke="currentColor" stroke-width="1.2"/>
-                <circle cx="3" cy="7" r="1.5" stroke="currentColor" stroke-width="1.2"/>
-                <circle cx="11" cy="11" r="1.5" stroke="currentColor" stroke-width="1.2"/>
-                <line x1="4.4" y1="6.2" x2="9.6" y2="3.8" stroke="currentColor" stroke-width="1.2"/>
                 <line x1="4.4" y1="7.8" x2="9.6" y2="10.2" stroke="currentColor" stroke-width="1.2"/>
               </svg>
               Share to X
@@ -212,5 +208,24 @@
   <!-- html2canvas for export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="/identity-card/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const shareBtn = document.getElementById('shareBtn');
+      const regenerateBtn = document.getElementById('regenerateBtn');
+      
+      if(shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const text = encodeURIComponent("I just generated my official PrismaX Operator Identity Credential. 🦾 Build the future.\n\n@anya_yfa7 #PrismaX");
+          window.open(`https://x.com/intent/tweet?text=${text}`, '_blank');
+        });
+      }
+      
+      if(regenerateBtn) {
+        regenerateBtn.addEventListener('click', () => {
+          window.location.reload();
+        });
+      }
+    });
+  </script>
 </body>
 </html>

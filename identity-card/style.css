@@ -339,14 +339,16 @@ body {
 
 /* ── Card Stage ─────────────────────────── */
 .card-stage {
-  min-height: 340px;
+  padding: 32px;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 40px;
   position: relative;
-  overflow: hidden;
+  z-index: 10;
+  animation: floatIdle 8s ease-in-out infinite;
+}
+
+@keyframes floatIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 .card-stage::before {
   content: '';
@@ -395,13 +397,11 @@ body {
 /* Watermark */
 .card-watermark {
   position: absolute;
-  top: 50%; right: -15%;
-  transform: translateY(-50%);
-  height: 180%; width: auto;
-  opacity: 0.02;
+  top: 20px; right: 20px;
+  width: 80px; height: auto;
+  opacity: 0.08;
   pointer-events: none;
-  z-index: 0;
-  filter: grayscale(100%);
+  z-index: 1;
 }
 
 /* Glass sheen overlay */
