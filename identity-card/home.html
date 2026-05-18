@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrismaX — Identity Card Generator</title>
+  <meta name="description" content="Generate your official PrismaX operator identity card. A premium credential system for robotics-native operators. Upload, configure, and export your glass-crafted identity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- Background atmosphere -->
+  <div class="bg-atmosphere">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- App Wrapper -->
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-mark" style="display: flex; align-items: center;">
+            <img src="logo.png" alt="PrismaX Logo" style="height: 30px; width: auto; object-fit: contain; display: block;" />
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">PrismaX</span>
+            <span class="brand-sub">IDENTITY SYSTEM</span>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#roles" class="nav-link">Roles</a>
+          <a href="#process" class="nav-link">Process</a>
+        </nav>
+        <a href="index.html" class="btn-header">
+          <span>Generate Card</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+
+        <!-- Status pill -->
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span class="pill-label">SYSTEM ACTIVE — v2.1</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-title">
+          Your Official
+          <span class="hero-title-line">
+            <span class="title-word">PrismaX</span>
+            <span class="title-word title-word--accent">Identity</span>
+          </span>
+          Card
+        </h1>
+
+        <p class="hero-desc">
+          Generate a premium, role-authenticated operator credential — crafted in glass, encoded with precision, issued by the PrismaX Intelligence Layer.
+        </p>
+
+        <div class="hero-actions">
+          <a href="index.html" class="btn btn--primary" id="heroCtaBtn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1l1.8 3.6L14 5.6l-3 2.9.7 4.1L8 10.4 5.3 12.6l.7-4.1-3-2.9 4.2-.9L8 1z" fill="currentColor"/>
+            </svg>
+            Generate My Card
+          </a>
+          <a href="#features" class="btn btn--ghost">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Hero meta row -->
+        <div class="hero-meta">
+          <div class="meta-stat">
+            <span class="meta-val">7</span>
+            <span class="meta-label">Operator Roles</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-stat">
+            <span class="meta-val">PNG</span>
+            <span class="meta-label">Export Format</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-stat">
+            <span class="meta-val">Live</span>
+            <span class="meta-label">Card Preview</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero visual: floating card mockup -->
+      <div class="hero-visual" id="heroVisual">
+        <div class="card-float-scene">
+
+          <!-- Ambient rings -->
+          <div class="ring ring--1"></div>
+          <div class="ring ring--2"></div>
+
+          <!-- Floating card -->
+          <div class="card-mockup" id="cardMockup">
+            <!-- Card accent bar -->
+            <div class="cm-bar"></div>
+            <!-- Glass sheen -->
+            <div class="cm-sheen"></div>
+            <!-- Card glow -->
+            <div class="cm-glow"></div>
+
+            <!-- Card content -->
+            <div class="cm-inner">
+              <div class="cm-top">
+                <div class="cm-brand" style="display: flex; align-items: center; gap: 8px;">
+                  <img src="logo.png" alt="PrismaX Logo" style="height: 24px; width: auto; object-fit: contain; display: block;" />
+                  <div>
+                    <span class="cm-brand-name">PrismaX</span>
+                    <span class="cm-brand-sub">OPERATOR CREDENTIAL</span>
+                  </div>
+                </div>
+                <span class="cm-badge">PROACTIVE</span>
+              </div>
+
+              <div class="cm-body">
+                <div class="cm-avatar">
+                  <div class="cm-avatar-initials">JD</div>
+                </div>
+                <div class="cm-info">
+                  <div class="cm-name">Jordan Decker</div>
+                  <div class="cm-role">Proactive Operator</div>
+                  <div class="cm-divider"></div>
+                  <div class="cm-meta">
+                    <div class="cm-meta-row"><span class="cm-ml">UID</span><span class="cm-mv">PX-20492-PRO</span></div>
+                    <div class="cm-meta-row"><span class="cm-ml">ISS</span><span class="cm-mv">2026.05.18</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cm-footer">
+                <span class="cm-id">CARD·ID: 7F3A-C02B-E591</span>
+                <div class="cm-qr">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" opacity="0.5">
+                    <rect x="2" y="2" width="10" height="10" rx="1.5" stroke="#DFD8D0" stroke-width="1.2" fill="none"/>
+                    <rect x="4" y="4" width="6" height="6" fill="#DFD8D0" rx="0.5" opacity="0.7"/>
+                    <rect x="16" y="2" width="10" height="10" rx="1.5" stroke="#DFD8D0" stroke-width="1.2" fill="none"/>
+                    <rect x="18" y="4" width="6" height="6" fill="#DFD8D0" rx="0.5" opacity="0.7"/>
+                    <rect x="2" y="16" width="10" height="10" rx="1.5" stroke="#DFD8D0" stroke-width="1.2" fill="none"/>
+                    <rect x="4" y="18" width="6" height="6" fill="#DFD8D0" rx="0.5" opacity="0.7"/>
+                    <rect x="16" y="16" width="3" height="3" fill="#DFD8D0" rx="0.5" opacity="0.6"/>
+                    <rect x="21" y="16" width="3" height="3" fill="#DFD8D0" rx="0.5" opacity="0.6"/>
+                    <rect x="16" y="21" width="3" height="3" fill="#DFD8D0" rx="0.5" opacity="0.6"/>
+                    <rect x="21" y="21" width="5" height="5" fill="#DFD8D0" rx="0.5" opacity="0.6"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating detail chips -->
+          <div class="float-chip float-chip--1">
+            <span class="chip-dot chip-dot--green"></span>
+            <span>Identity Verified</span>
+          </div>
+          <div class="float-chip float-chip--2">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+              <path d="M6 1l1.2 2.4 2.8.4-2 2 .5 2.7L6 7.2 3.5 8.5l.5-2.7-2-2 2.8-.4L6 1z" fill="rgba(223,216,208,0.7)"/>
+            </svg>
+            <span>Role Authenticated</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ FEATURES ══════════════════ -->
+    <section class="section features-section" id="features">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-eyebrow">CAPABILITIES</p>
+          <h2 class="section-title">Built for precision.<br/>Designed for operators.</h2>
+          <p class="section-desc">Every detail of your PrismaX credential is rendered with architectural precision — from the glass surface to the encoded role data.</p>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="feature-card glass-card" id="feat1">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="8" r="4.5" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <path d="M3 19c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#DFD8D0" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Photo Upload</h3>
+            <p class="feature-desc">Upload your profile image via drag-and-drop or file select. Supports PNG, JPG, WEBP up to 5MB with live preview.</p>
+          </div>
+
+          <div class="feature-card glass-card" id="feat2">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <polygon points="11,2 20,7 20,15 11,20 2,15 2,7" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <circle cx="11" cy="11" r="2" fill="#DFD8D0" opacity="0.8"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Role Selection</h3>
+            <p class="feature-desc">Choose from 7 operator roles. Each role assigns a unique color accent and credential classification to your card.</p>
+          </div>
+
+          <div class="feature-card glass-card" id="feat3">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="5" width="18" height="13" rx="2.5" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <path d="M7 5V3.5a1.5 1.5 0 0 1 3 0V5M12 5V3.5a1.5 1.5 0 0 1 3 0V5" stroke="#DFD8D0" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M6 12h10M6 15.5h6" stroke="#DFD8D0" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Live Preview</h3>
+            <p class="feature-desc">See your identity card render in real-time as you type your name and configure your role. Instant, zero-lag feedback.</p>
+          </div>
+
+          <div class="feature-card glass-card" id="feat4">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 3v10M7 9l4 4 4-4" stroke="#DFD8D0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 16h16" stroke="#DFD8D0" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/>
+                <path d="M3 16v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2" stroke="#DFD8D0" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">PNG Export</h3>
+            <p class="feature-desc">Download your final identity card as a high-quality PNG using html2canvas rendering. Share-ready and print-ready.</p>
+          </div>
+
+          <div class="feature-card glass-card" id="feat5">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M2 11a9 9 0 1 0 18 0 9 9 0 0 0-18 0z" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <path d="M8 11l2.5 2.5L14 8" stroke="#DFD8D0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Unique Card ID</h3>
+            <p class="feature-desc">Every generated card is issued a cryptographic-style unique identifier and timestamped issuance date.</p>
+          </div>
+
+          <div class="feature-card glass-card" id="feat6">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="16" cy="5" r="2" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <circle cx="6" cy="11" r="2" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <circle cx="16" cy="17" r="2" stroke="#DFD8D0" stroke-width="1.3" fill="none"/>
+                <line x1="7.8" y1="10.1" x2="14.2" y2="5.9" stroke="#DFD8D0" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="7.8" y1="11.9" x2="14.2" y2="16.1" stroke="#DFD8D0" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Share to X</h3>
+            <p class="feature-desc">One-click share to X (Twitter) with your operator card. Announce your role to the PrismaX network.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ ROLES ══════════════════ -->
+    <section class="section roles-section" id="roles">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-eyebrow">OPERATOR ROLES</p>
+          <h2 class="section-title">Seven roles.<br/>One system.</h2>
+          <p class="section-desc">Each role reflects a distinct operational modality within the PrismaX intelligence layer. Select the classification that defines your function.</p>
+        </div>
+
+        <div class="roles-strip">
+
+          <div class="role-tile" style="--rc: #CD7F32;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Reactive</span>
+              <p class="role-tile-desc">High-reflex response operations. Instantaneous decision loops.</p>
+            </div>
+          </div>
+
+          <div class="role-tile" style="--rc: #8B8B3A;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Assistive</span>
+              <p class="role-tile-desc">Support-layer coordination. Amplifies system capabilities.</p>
+            </div>
+          </div>
+
+          <div class="role-tile" style="--rc: #D4A017;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Proactive</span>
+              <p class="role-tile-desc">Anticipatory command routing. Preemptive action protocols.</p>
+            </div>
+          </div>
+
+          <div class="role-tile" style="--rc: #F5C842;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Exploratory</span>
+              <p class="role-tile-desc">Unstructured terrain intelligence. Adaptive mapping.</p>
+            </div>
+          </div>
+
+          <div class="role-tile" style="--rc: #C8A84B;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Stabilized</span>
+              <p class="role-tile-desc">Equilibrium-focused operations. Precision balancing.</p>
+            </div>
+          </div>
+
+          <div class="role-tile" style="--rc: #B5CC18;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Navigational</span>
+              <p class="role-tile-desc">Path-finding and spatial routing. Environmental mastery.</p>
+            </div>
+          </div>
+
+          <div class="role-tile role-tile--wide" style="--rc: #B09FCC;">
+            <div class="role-tile-accent"></div>
+            <div class="role-tile-inner">
+              <span class="role-tile-dot"></span>
+              <span class="role-tile-name">Groundbreaker</span>
+              <p class="role-tile-desc">Frontier-class operators. Novel environment pioneers. Unrestricted mission scope.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ PROCESS ══════════════════ -->
+    <section class="section process-section" id="process">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-eyebrow">HOW IT WORKS</p>
+          <h2 class="section-title">Three steps to<br/>your credential.</h2>
+        </div>
+
+        <div class="steps">
+
+          <div class="step glass-card" id="step1">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3 class="step-title">Configure</h3>
+              <p class="step-desc">Upload your photo, enter your full name, and select your operator role from the 7 available classifications.</p>
+            </div>
+            <div class="step-connector"></div>
+          </div>
+
+          <div class="step glass-card" id="step2">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3 class="step-title">Preview</h3>
+              <p class="step-desc">Watch your card render live with your chosen role's accent color, unique ID, and glassmorphic finish.</p>
+            </div>
+            <div class="step-connector"></div>
+          </div>
+
+          <div class="step glass-card" id="step3">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3 class="step-title">Export</h3>
+              <p class="step-desc">Download as a high-fidelity PNG or share directly to X. Your credential is ready for the network.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════ CTA ══════════════════ -->
+    <section class="section cta-section">
+      <div class="section-inner">
+        <div class="cta-block glass-card">
+          <div class="cta-glow"></div>
+          <div class="cta-content">
+            <p class="section-eyebrow" style="margin-bottom: 16px;">READY TO GENERATE</p>
+            <h2 class="cta-title">Claim your operator identity.</h2>
+            <p class="cta-desc">Join the PrismaX intelligence layer. Your credential is one generation away.</p>
+            <a href="index.html" class="btn btn--primary btn--lg" id="ctaFinalBtn">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1l1.8 3.6L14 5.6l-3 2.9.7 4.1L8 10.4 5.3 12.6l.7-4.1-3-2.9 4.2-.9L8 1z" fill="currentColor"/>
+              </svg>
+              Generate My Card
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand" style="display: flex; align-items: center; gap: 8px;">
+          <img src="logo.png" alt="PrismaX Logo" style="height: 20px; width: auto; object-fit: contain; display: block; opacity: 0.8;" />
+          <span>PrismaX</span>
+        </div>
+        <p class="footer-copy">© 2026 PrismaX — Robotics-Native Service Layer. All credentials are system-authenticated.</p>
+      </div>
+    </footer>
+
+  </div><!-- /app-wrapper -->
+
+  <script src="home.js"></script>
+</body>
+</html>
